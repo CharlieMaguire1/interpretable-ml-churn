@@ -1,4 +1,35 @@
+# Python
 __pycache__/
+*.pyc
+*.pyo
+
+# Notebook checkpoints
 .ipynb_checkpoints/
-data/raw/*
+
+# Data
+data/raw/*.csv
+data/interim/*
+data/processed/*
+
+# Output
+outputs/models/*
+outputs/metrics/*
+outputs/figures/*
+
+# Environment
 .env
+env/
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Jupyter exports
+.html
+
+# Logs
+*.log
