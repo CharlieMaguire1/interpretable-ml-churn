@@ -18,7 +18,7 @@ Responsibilities
     - Precision, Recall, F1
     - Confusion matrix
 
-- Save the artifacts:
+- Save the artefacts:
     - metrics JSON (outputs/metrics/)
     - confusion matrix PNG (outputs/figures/)
     - model pipeline joblib (outputs/models/)
@@ -30,7 +30,7 @@ Key Principles
 - Deterministic:
     the thresholds are fixed from config.thresholds
 - Traceability:
-    the artifacts are named with the model name, and the metrics record the 
+    the artefacts are named with the model name, and the metrics record the 
     chosen threshold
 """
 
@@ -157,7 +157,7 @@ def evaluate_and_save(
     y_test,
 ) -> Dict[str, EvaluationResult]:
     """
-    This functions evaluates each trained model and saves the artifacts.
+    This functions evaluates each trained model and saves the artefacts.
     
     Parameters
     ---------

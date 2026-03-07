@@ -2,7 +2,7 @@
 
 This is a reproducible machine learning pipeline for predicting customer churn using the Telco Customer Churn dataset.
 
-The objective of this project is not to only train a model, but to demonstrate a production-style ML pipeline design with deterministic preprocessing, reproducible, and traceable artifacts.
+The objective of this project is not to only train a model, but to demonstrate a production-style ML pipeline design with deterministic preprocessing, reproducible, and traceable artefacts.
 
 
 ---
@@ -17,7 +17,7 @@ This project implements a modular ML pipeline that does the following:
 - Trains interpretable and non-linear models
 - Selects a decision threshold using a validation set
 - Evaluates the final performance on a held-out test set
-- Saves the reproducible artifacts (models, metrics, and figures)
+- Saves the reproducible artefacts (models, metrics, and figures)
 
 
 ---
@@ -33,7 +33,7 @@ This project adopts similar principles in the context of machine learning pipeli
 
 - Deterministic transformations
 - Explicit stage boundaries
-- Traceable intermediate artifacts
+- Traceable intermediate artefacts
 - Measurable evaluation between stages
 
 The pipeline architecture reflects the same emphasis on reproducibility, traceability, and controlled transformations.
@@ -64,7 +64,7 @@ flowchart LR
     C --> D[Training]
     D --> E[Evaluation]
 
-    E --> F[Model Artifacts]
+    E --> F[Model Artefacts]
     E --> G[Metrics Reports]
     E --> H[Figures]
 ```
@@ -95,7 +95,7 @@ flowchart LR
 
 - Selects the best decision threshold on the validation set
 - Computes the final metrics on the test set
-- Generates the experiment artifacts
+- Generates the experiment artefacts
 
 
 ---
@@ -136,32 +136,43 @@ The pipeline design is based on the objective of reproducibility
 ### Key Principles
 
 **Deterministic configuration**
+
     All experiments settings are controlled through src/config.py
+
     Examples:
+
     - random seed
     - split ratios
     - evaluation thresholds
     - model selection flags
 
 **No data leakage**
+
     The data splits follow the ML evaluation protocol:
+
         train → model fitting
         validation → threshold selection
         test → final evaluation
+
     The preprocessing pipeline is fit on the training data through the sklearn pipeline.
 
-**Traceability of the Artifacts**
-    All pipeline runs generate artifacts:
+**Traceability of the Artefacts**
+
+    All pipeline runs generate artefacts:
+
         outputs/
             models/
             metrics/
             figures/
-    The metrics artifacts consist of:
+
+    The metrics artefacts consist of:
+
         - A snapshot of the model configuration
         - Threshold sweep results
         - Confusion matrix
         - Evaluation metrics
         - Sizes of the dataset splits
+
     This allows the experiments to be reproducible and to be inspected without running the pipeline again.
 
 
@@ -185,7 +196,7 @@ The pipeline will:
 2. Run the preprocessing
 3. Train the models
 4. Evaluate the results
-5. Save the artifacts
+5. Save the artefacts
 
 
 ---
@@ -225,11 +236,11 @@ Full results are stored in:
 ---
 
 
-## Artifacts Produced
+## Artefacts Produced
 
-Each pipeline run generates the following artifacts.
+Each pipeline run generates the following artefacts.
 
-### Model artifacts
+### Model artefacts
 
 Serialised sklearn pipelines:
 
@@ -270,25 +281,45 @@ The visualisation of the confusion matrix:
 ## Project Structure
 
 project_root/ 
+
 │ 
+
 ├── run_pipeline.py 
+
 ├── environment.yml 
+
 ├── README.md 
+
 │ 
+
 ├── src/ 
+
 │   ├── ingestion.py 
+
 │   ├── preprocessing.py 
+
 │   ├── modeling.py 
+
 │   ├── evaluate.py 
+
 │   ├── config.py 
+
 │   └── paths.py 
+
 │ 
+
 ├── data/ 
+
 │   └── raw/ 
+
 │ 
+
 └── outputs/ 
+
     ├── models/ 
+
     ├── metrics/ 
+
     └── figures/
     
 
@@ -312,5 +343,7 @@ There are possible extensions for this project:
 ## Author
 
 Charlie Maguire
+
 MSc Data Science (Merit)
+
 LinkedIn: https://www.linkedin.com/in/charlie-maguire-08b5871b8/

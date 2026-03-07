@@ -46,7 +46,7 @@ Where this file sits in the pipeline
     - IMPORTANT: the preprocessor is fit during model.fit(X_train, y_train),
       so the preprocessing statistics are learned from the training data only (no leakage).
       
-4. Evaluation and Artifacts (src/evaluate.py, src/paths.py)
+4. Evaluation and Artefacts (src/evaluate.py, src/paths.py)
     - evaluate_models(...) select a decision threshold on the validation data (max F1),
       evaluates on the test data with that threshold, and writes to:
         output/metrics/*, outputs/figures/*
@@ -62,7 +62,7 @@ Key Principles
     the split happens before the fitting: preprocessor is only fit within training .fit().
 - Traceability:
     the ingestion adds provenance, and preprocessing drops provenance from the features.
-- Deployable artifacts:
+- Deployable artefacts:
     they are saved joblib pipelines that include both the fitted preprocessor and the fitted
     model.    
 """
