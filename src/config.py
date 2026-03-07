@@ -27,3 +27,28 @@ USE_RANDOM_FOREST: bool = True
 RF_N_ESTIMATORS: int = 400
 RF_MAX_DEPTH: int = None
 
+random_seed: int = 42 # Reproducibility
+
+# Data Split:
+#   train(70%), val(15%), test(15%)
+val_test_size: float = 0.30 
+test_size: float = 0.50
+
+# Evaluation
+primary_metric: str = "roc_auc"
+default_threshold: float = 0.50
+thresholds = np.linspace(0.05, 0.95, 19) # Threshold sweep in evaluate.py
+
+# Models
+use_logreg: bool = True
+use_random_forest: bool = True
+use_xgboost: bool = False # This is optional 
+
+# Random Forest defaults
+rf_n_estimators: int = 400
+rf_max_depth = None
+
+# XGBoost defaults (optional)
+xgb_n_estimators: int = 500
+xgb_learning_rate: float = 0.05
+xgb_max_depth: int = 4
