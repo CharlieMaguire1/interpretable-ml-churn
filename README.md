@@ -136,32 +136,43 @@ The pipeline design is based on the objective of reproducibility
 ### Key Principles
 
 **Deterministic configuration**
+
     All experiments settings are controlled through src/config.py
+
     Examples:
+
     - random seed
     - split ratios
     - evaluation thresholds
     - model selection flags
 
 **No data leakage**
+
     The data splits follow the ML evaluation protocol:
+
         train → model fitting
         validation → threshold selection
         test → final evaluation
+
     The preprocessing pipeline is fit on the training data through the sklearn pipeline.
 
 **Traceability of the Artifacts**
+
     All pipeline runs generate artifacts:
+
         outputs/
             models/
             metrics/
             figures/
+
     The metrics artifacts consist of:
+
         - A snapshot of the model configuration
         - Threshold sweep results
         - Confusion matrix
         - Evaluation metrics
         - Sizes of the dataset splits
+        
     This allows the experiments to be reproducible and to be inspected without running the pipeline again.
 
 
@@ -270,25 +281,45 @@ The visualisation of the confusion matrix:
 ## Project Structure
 
 project_root/ 
+
 │ 
+
 ├── run_pipeline.py 
+
 ├── environment.yml 
+
 ├── README.md 
+
 │ 
+
 ├── src/ 
+
 │   ├── ingestion.py 
+
 │   ├── preprocessing.py 
+
 │   ├── modeling.py 
+
 │   ├── evaluate.py 
+
 │   ├── config.py 
+
 │   └── paths.py 
+
 │ 
+
 ├── data/ 
+
 │   └── raw/ 
+
 │ 
+
 └── outputs/ 
+
     ├── models/ 
+
     ├── metrics/ 
+
     └── figures/
     
 
@@ -312,5 +343,7 @@ There are possible extensions for this project:
 ## Author
 
 Charlie Maguire
+
 MSc Data Science (Merit)
+
 LinkedIn: https://www.linkedin.com/in/charlie-maguire-08b5871b8/
