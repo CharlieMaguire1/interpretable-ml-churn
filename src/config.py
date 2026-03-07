@@ -17,7 +17,7 @@ TEST_SIZE: float = 0.50
 # Evaluation
 PRIMARY_METRIC: str = "roc_auc"
 DEFAULT_THRESHOLD: float = 0.50
-THRESHOLD = np.linspace(0.05, 0.95, 19) # Threshold sweep in evaluate.py
+THRESHOLDS = np.linspace(0.05, 0.95, 19) # Threshold sweep in evaluate.py
 
 # Models
 USE_LOGREG: bool = True

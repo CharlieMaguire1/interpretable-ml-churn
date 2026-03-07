@@ -248,7 +248,10 @@ def split_data(
     y: pd.Series,
 ) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.Series, pd.Series, pd.Series]:
     """
-    This function creates a deterministic stratified train/val/test splits.
+    This function creates a deterministic stratified train/val/test splits.7
+    
+    Expected outcome on Telco dataset after cleaning:
+    - ~70/15/15 split with churn rate ~0.266 preserved across splits.
 
     Configuration behaviour (from config.py):
     - VAL_TEST_SIZE: A fraction of the dataset to reserve for val and test
