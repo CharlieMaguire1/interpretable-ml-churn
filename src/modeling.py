@@ -18,7 +18,7 @@ Key Principles
 - No leakage:
     The preprocessor is not fit in preprocessing.py.
     It is fit inside model_pipeline.fit(X_train, y_train) only.
-- Deployable artifacts:
+- Deployable artefacts:
     The fitted sklearn Pipeline can be saved via joblib and used for inference
     as a single object (preprocessing plus the model)
 """
@@ -37,7 +37,7 @@ from . import config
 class TrainedModel:
     """
     This is a small wrapper that keeps the trained pipelines and its name together,
-    which makes saving the evaluation/artifacts easier and more explicit.
+    which makes saving the evaluation/artefacts easier and more explicit.
     """
     name: str
     pipeline: Pipeline
